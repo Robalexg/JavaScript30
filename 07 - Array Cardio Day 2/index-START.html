@@ -27,15 +27,52 @@
 
     // Some and Every Checks
     // Array.prototype.some() // is at least one person 19 or older?
+
+    let age = people.some((people) => {
+      let age1 = (2025- people.year )
+      console.log(age1)
+      return age1 > 19
+    })
+    console.log(age)
+
     // Array.prototype.every() // is everyone 19 or older?
+
+    let everyAge = people.every((person) => {
+      let age = (2025- person.year )
+      return age >= 19
+    })
+
+    console.log(everyAge)
 
     // Array.prototype.find()
     // Find is like filter, but instead returns just the one you are looking for
     // find the comment with the ID of 823423
 
+    let findComment = comments.find((comment) => {
+      return comment.id === 823423
+    })
+
+    console.log(findComment)
     // Array.prototype.findIndex()
     // Find the comment with this ID
     // delete the comment with the ID of 823423
+    let find = comments.findIndex((comment) => {
+      return comment.id === 823423
+    })
+
+    console.log(comments)
+
+    
+    for(let i = 0; i < comments.length; i++){
+      if(i === find){
+        comments.slice(find,1)
+        i--
+      }
+    }
+
+
+
+    console.log(comments)
 
   </script>
 </body>
